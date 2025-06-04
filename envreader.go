@@ -1,4 +1,4 @@
-package main
+package envreader
 
 import (
 	"bufio"
@@ -7,14 +7,14 @@ import (
 	"strings"
 )
 
-func main() {
-	
-    file, err := os.Open("./config/.env")
+func Load(file string) (err error) {
+    content, err := os.Open(file)
 	if err != nil {
 		fmt.Errorf("failed to open file %w", err)
+		return err
 	}
 
-	scanner := bufio.NewScanner(file)
+	scanner := bufio.NewScanner(content)
 	for scanner.Scan() {
 		line := scanner.Text()
 
@@ -29,4 +29,6 @@ func main() {
 		pair := strings.Split(line, ": ")
 		os.Setenv(pair[0], pair[1])
 	}
+
+	return
 }
