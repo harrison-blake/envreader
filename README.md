@@ -2,7 +2,6 @@
 
 A minimal Go package for reading simple `.env` files and setting key-value pairs as environment variables at runtime.
 
-- path MUST match `./config/.env`
 - `.env` file MUST follow the yaml format
 
 **ex.**  
