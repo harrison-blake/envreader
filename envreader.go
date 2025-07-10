@@ -19,7 +19,7 @@ func Load(file string) (err error) {
 		line := scanner.Text()
 
 		// skip comments and new lines
-		if strings.HasPrefix(line, "#") || strings.TrimSpace(line) == "" {
+		if strings.HasPrefix(line, "#") || strings.TrimSpace(line) == "" || strings.HasPrefix(line, "export") {
 			continue
 		}
 
