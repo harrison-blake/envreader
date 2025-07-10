@@ -7,8 +7,8 @@ A minimal Go package for reading simple `.env` files and setting key-value pairs
 **ex.**  
 ```
 # this is a comment
-API_KEY: abc123
-DEBUG: true
+API_KEY=abc123
+DEBUG=true
 ```
 
 ## Usage

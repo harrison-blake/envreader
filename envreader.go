@@ -23,10 +23,7 @@ func Load(file string) (err error) {
 			continue
 		}
 
-		// TODO: probably don't allow escape characters
-		// research what other characters that shouldn't be allowed
-
-		pair := strings.Split(line, ": ")
+		pair := strings.Split(line, "=")
 		os.Setenv(pair[0], pair[1])
 	}
 
